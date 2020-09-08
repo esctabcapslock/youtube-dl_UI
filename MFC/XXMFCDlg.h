@@ -32,4 +32,9 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
+	afx_msg void OnBnClickedRadio2();
+	afx_msg void OnEnChangeEdit1();
+	afx_msg void OnBnClickedRadio1();
+	// 라디오 버튼 제어 변수 추가
+	int xx_radio;
 };

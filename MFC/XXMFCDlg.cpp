@@ -22,6 +22,7 @@
 
 CXXMFCDlg::CXXMFCDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_XXMFC_DIALOG, pParent)
+	, xx_radio(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -29,12 +30,16 @@ CXXMFCDlg::CXXMFCDlg(CWnd* pParent /*=nullptr*/)
 void CXXMFCDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Radio(pDX, IDC_RADIO1, xx_radio);
 }
 
 BEGIN_MESSAGE_MAP(CXXMFCDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CXXMFCDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_RADIO2, &CXXMFCDlg::OnBnClickedRadio2)
+	ON_EN_CHANGE(IDC_EDIT1, &CXXMFCDlg::OnEnChangeEdit1)
+	ON_BN_CLICKED(IDC_RADIO1, &CXXMFCDlg::OnBnClickedRadio1)
 END_MESSAGE_MAP()
 
 
@@ -94,9 +99,9 @@ HCURSOR CXXMFCDlg::OnQueryDragIcon()
 
 void CXXMFCDlg::OnBnClickedButton1()
 {
-	CString str, dr("-x --audio-format mp3 --audio-quality 0 "),pa(" && pause"),cmd,cmd2;
+	CString str, dir(""), mp4("--merge-output-format mp4 "), mp3("-x --audio-format mp3 --audio-quality 0 "),pa(" && pause"),cmd,cmd2;
 	GetDlgItemText(IDC_EDIT1, str);
-	cmd = dr + str;
+	cmd = (xx_radio ? mp4 : mp3) + str;
 	//cmd2 = cmd + pa;
 	int point = cmd.Find(L"&list");
 	if (point>5) cmd = cmd.Left(point);
@@ -108,4 +113,35 @@ void CXXMFCDlg::OnBnClickedButton1()
 	//https://blog.naver.com/tipsware/221307958643
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	ShellExecute(NULL, _T("open"), _T("youtube-dl.exe"), cmd, NULL, SW_SHOW);
+}
+
+
+void CXXMFCDlg::OnBnClickedRadio2()
+{
+	xx_radio = 1;
+	//CString strr;
+	//strr.Format(_T("%d"), xx_radio);
+	//MessageBox(strr);
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CXXMFCDlg::OnEnChangeEdit1()
+{
+	// TODO:  RICHEDIT 컨트롤인 경우, 이 컨트롤은
+	// CDialogEx::OnInitDialog() 함수를 재지정 
+	//하고 마스크에 OR 연산하여 설정된 ENM_CHANGE 플래그를 지정하여 CRichEditCtrl().SetEventMask()를 호출하지 않으면
+	// 이 알림 메시지를 보내지 않습니다.
+
+	// TODO:  여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CXXMFCDlg::OnBnClickedRadio1()
+{
+	xx_radio = 0;
+	//CString strr;
+	//strr.Format(_T("%d"), xx_radio);
+	//MessageBox(strr);
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
