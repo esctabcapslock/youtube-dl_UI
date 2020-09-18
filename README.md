@@ -6,9 +6,9 @@
 - 실재 본인이 짠 코드는 7줄 정도
 
 ## 실행방법
-- <a href="https://github.com/esctabcapslock/youtube-dl_UI/raw/master/C%2B%2B%20GUI.7z">C++ GUI.7z 파일</a>을 다운로드한 뒤 압축해제(<a href="https://www.bandisoft.com/">반디집</a> 소프트웨어 이용 권장)
+- <a href="https://github.com/esctabcapslock/youtube-dl_UI/raw/master/C%2B%2B%20GUI.7z">C++ GUI.7z 파일</a>을 다운로드한 뒤 압축해제 (<a href="https://www.bandisoft.com/">반디집</a>, 알집 등 압축 해제 소프트웨어 이용요함) 
 - "유튜브 다운로드.exe"를 실행 (파일명의 ".exe" 부분은 개인 컴퓨터 설정에 따라 보이지 않을 수 있음)
-- 주소를 넣고 유형을 선택한 후 버튼을 누르면 해당 유튜브 영상이 선택한 형식으로 변환되어 실행 파일이 있는 폴더에 저장됨
+- 주소를 넣고 저장 유형을 선택한 후 버튼을 누르면, 해당 유튜브 영상이 선택한 형식으로 변환되어 실행 파일이 있는 폴더에 저장됨
 - 프로그램 실행시 나타나는 <b>검은색 창을 닫지 말 것.</b> 작업이 완료되면 알아서 닫힘.
 
 ## 주의사항
