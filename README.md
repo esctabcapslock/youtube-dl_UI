@@ -1,6 +1,6 @@
 # 유튜브 다운로더 (youtube-dl 사용자 인터페이스) 
 
-<a href="https://github.com/esctabcapslock/youtube-dl_UI/raw/master/C%2B%2B%20GUI.7z"><h2>다운로드 (클릭)</h2></a>
+<a href="https://github.com/esctabcapslock/youtube-dl_UI/raw/master/C%2B%2B%20GUI.7z">다운로드 (클릭)</a>
 
 
 ## 개요
